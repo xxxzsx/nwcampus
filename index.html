@@ -4,11 +4,23 @@
   <link rel="shortcut icon" href="https://static.tildacdn.com/img/tildafavicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
-<body>
+<body style="margin:0;padding:0;background:transparent;">
   <iframe
-    src="https://yacdn.org/proxy/http://project1440204.tilda.ws"
-    onload="this.contentWindow.document.getElementById('tildacopy').remove();"
-    style="position:fixed;top:0;left:0;bottom:0;right:0;width:1px;min-width:100%;*width:100%;height:100%;border:none;margin:0;padding:0;overflow:hidden;z-index:999999;"
-  />
+    id="frame"
+    src="about:blank"
+    sandbox="allow-modals allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts"
+    allow="geolocation; midi; camera; microphone; speaker;"
+    frameborder="0"
+    style="border:none;position:absolute;top:0;left:0;right:0;bottom:0;height:100%;width:100%;"></iframe>
+  <script>
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://yacdn.org/proxy/http://project1440204.tilda.ws', false);
+    request.send(null);
+    var iframe = document.getElementById('frame').contentWindow;
+    iframe.document.open();
+    iframe.document.write(request.responseText);
+    iframe.document.close();
+    iframe.onload = function() { iframe.document.getElementById('tildacopy').remove() };
+  </script>
 </body>
 </html>
