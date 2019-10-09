@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <script>
   var request = new XMLHttpRequest();
+
+  // Bypass tilda free account restrictions using shared CORS proxy
   request.open('GET', 'https://cors-anywhere.herokuapp.com/http://project1440204.tilda.ws', false);
   request.send(null);
+
+  // Show page
   document.open();
   document.write(request.responseText);
   document.close();
+
+  // Remove watermark
   window.onload = function() { document.getElementById('tildacopy').remove(); };
 </script>
