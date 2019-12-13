@@ -12,5 +12,7 @@
   document.close();
 
   // Remove watermark
-  window.onload = function() { document.getElementById('tildacopy').remove(); };
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('tildacopy').remove();
+  });
 </script>
