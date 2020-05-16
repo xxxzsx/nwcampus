@@ -3,12 +3,12 @@
   var request = new XMLHttpRequest();
 
   // Bypass tilda free account restrictions using shared CORS proxy
-  request.open('GET', 'https://cors-anywhere.herokuapp.com/http://project1440204.tilda.ws', false);
+  request.open('GET', 'https://api.allorigins.win/get?url=http://project1440204.tilda.ws', false);
   request.send(null);
 
   // Show page
   document.open();
-  document.write(request.responseText);
+  document.write(JSON.parse(request.responseText).contents);
   document.close();
 
   // Remove watermark
