@@ -12,7 +12,7 @@
   document.close();
 
   // Remove watermark
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.t-tildalabel').remove();
+  document.addEventListener('DOMSubtreeModified', function() {
+    document.querySelector('.t-tildalabel') && document.querySelector('.t-tildalabel').remove();
   });
 </script>
