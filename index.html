@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <script>
-  var request = new XMLHttpRequest();
+    var request = new XMLHttpRequest();
 
-  // Bypass tilda free account restrictions using shared CORS proxy
-  request.open('GET', 'https://api.allorigins.win/get?url=http://project1440204.tilda.ws', false);
-  request.send(null);
+    // Bypass tilda free account restrictions using shared CORS proxy
+    request.open('GET', 'https://api.allorigins.win/get?url=http://project1440204.tilda.ws', false);
+    request.send(null);
 
-  // Show page
-  document.open();
-  document.write(JSON.parse(request.responseText).contents);
-  document.close();
+    // Show page
+    document.open();
+    document.write(JSON.parse(request.responseText).contents);
+    document.close();
 
-  // Remove watermark
-  document.addEventListener('DOMSubtreeModified', function() {
-    document.querySelector('.t-tildalabel') && document.querySelector('.t-tildalabel').remove();
-  });
+    // Remove watermark
+    document.addEventListener('DOMSubtreeModified', function() {
+        document.querySelector('.t-tildalabel') && document.querySelector('.t-tildalabel').remove();
+    });
 </script>
